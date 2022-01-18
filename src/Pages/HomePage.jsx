@@ -1,32 +1,16 @@
 import React from 'react'
-import {
-    Routes,
-    Route,
-    Link,
-    useNavigate,
-    useLocation,
-    Navigate,
-    Outlet
-  } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useAuth } from "react-use-auth";
+import Header from '../Components/Header'
 
 export default function HomePage() {
 
-    let auth = useAuth();
-    let navigate = useNavigate();
 
-    if (!auth.user) {
-        return <p>You are not logged in.</p>;
-    }
-
-    return (
-    <p>
-        Welcome {auth.user}!{" "}
-    <button
-        onClick={() => {
-            auth.signout(() => navigate("/"));
-        }}>
-    Sign out
-    </button>
-    </p>
-  );
+  return (  
+    <div>
+      <Header />
+      <div className="text-white text-xl3"> HOMEPAGE 
+      </div>
+    </div>
+  )
 }
